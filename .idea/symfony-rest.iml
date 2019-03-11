@@ -5,10 +5,19 @@
       <sourceFolder url="file://$MODULE_DIR$/symfony/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/symfony/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/console" />
@@ -25,8 +34,12 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/twig-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/twig/twig" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
