@@ -9,10 +9,20 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/doctrine-migrations-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/doctrine/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/ocramius/package-versions" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/psr/log" />
@@ -24,6 +34,7 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/debug" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/doctrine-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/dotenv" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/filesystem" />
@@ -32,14 +43,18 @@
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/framework-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/orm-pack" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/zendframework/zend-code" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/vendor/zendframework/zend-eventmanager" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
