@@ -14,32 +14,7 @@
     <pharConfigPath>$PROJECT_DIR$/symfony/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/Rest/RestController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="e#37#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/Web/WebController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding>
-                <element signature="e#36#56#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -76,7 +51,6 @@
         <option value="$PROJECT_DIR$/dockerfiles/phpmyadmin/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/dockerfiles/docker-entrypoint.sh" />
         <option value="$PROJECT_DIR$/symfony/src/test.php" />
-        <option value="$PROJECT_DIR$/dockerfiles/php/Dockerfile" />
         <option value="$PROJECT_DIR$/symfony/config/bundles.php" />
         <option value="$PROJECT_DIR$/symfony/config/packages/fos_user.yaml" />
         <option value="$PROJECT_DIR$/symfony/src/Form/MovieType.php" />
@@ -98,6 +72,7 @@
         <option value="$PROJECT_DIR$/symfony/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/symfony/src/Entity/Test.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/Rest/RestController.php" />
+        <option value="$PROJECT_DIR$/dockerfiles/php/Dockerfile" />
       </list>
     </option>
   </component>
@@ -216,13 +191,6 @@
               <item name="symfony-rest" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-rest" type="462c0819:PsiDirectoryNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony-rest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -300,12 +268,12 @@
       <option name="presentableId" value="Default" />
       <updated>1551947741170</updated>
       <workItem from="1551947747599" duration="7098000" />
-      <workItem from="1552396999751" duration="43509000" />
+      <workItem from="1552396999751" duration="44300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84649000" />
+    <option name="totallyTimeSpent" value="85440000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,7 +286,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1430" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25538972" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -329,11 +296,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39916405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32868218" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32810867" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32868218" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32706374" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32706374" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32706374" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -386,22 +353,7 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/symfony/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
-          <folding>
-            <element signature="e#23#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/config/routes/test.yaml" />
     <entry file="file://$PROJECT_DIR$/symfony/src/test.php" />
-    <entry file="file://$PROJECT_DIR$/dockerfiles/php/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/symfony/config/routes/dev/twig.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -554,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../symfony4/dockerfiles/php/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/supervisord/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -641,15 +586,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/Rest/RestController.php">
+    <entry file="file://$PROJECT_DIR$/../symfony4/dockerfiles/php/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#37#57#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="7" selection-end-line="58" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dockerfiles/php/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dockerfiles/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dockerfiles/makeconfig.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dockerfiles/makedb.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/Web/WebController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -657,6 +619,16 @@
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
             <element signature="e#36#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/Rest/RestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#37#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
