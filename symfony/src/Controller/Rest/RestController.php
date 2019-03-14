@@ -79,7 +79,7 @@ class RestController extends FOSRestController
         $em->remove($id);
         $em->flush();
         // In case our PUT was a success we need to return a 200 HTTP OK response with the object as a result of PUT
-        return View::create($article, Response::HTTP_OK);
+        return View::create($article, Response::HTTP_NO_CONTENT);
     }
 
 
