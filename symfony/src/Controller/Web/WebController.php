@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller\Web;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Test;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
 
@@ -11,9 +11,10 @@ class WebController extends Controller
      */
     public function index()
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/WebController.php',
-        ]);
+        $test = new Test();
+        $test->setName('Test');
+        $test->setDescription('Description');
+        $test->setId('s');
+        return $this->json($test);
     }
 }

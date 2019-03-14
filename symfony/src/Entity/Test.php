@@ -5,9 +5,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
- * @ORM\Table(name="movie")
+ * @ORM\Table(name="test")
  */
-class Movie {
+class Test {
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id

@@ -34,7 +34,7 @@ services:
       image: phpmyadmin/phpmyadmin
       container_name: phpmyadmin
       restart: always
-      links:
+      depends_on:
         - db
       ports:
         - 8080:80
@@ -52,8 +52,10 @@ services:
       MYSQL_DATABASE: rest_api
       MYSQL_USER: root
       MYSQL_PASSWORD: root
+      DB_CONNECTION: mysql
     volumes:
-      - /var/lib/mysql57-data:/var/lib/mysql
+#      - ./docker/dbdata:/var/lib/mysql
+      - db:/var/lib/mysql
 
 # entry point
   nginx:
