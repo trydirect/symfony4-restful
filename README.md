@@ -1,5 +1,5 @@
 # symfony4-restful
-RESTfull API template based on Symfony 4 +  MySQL + docker-compose.yml
+RESTfull API template based on Symfony 4 +  MySQL + docker-compose.yml for development purpose
 ## Installation
 
 Firstly, you must have ready-to-use Symfony project. Instructions in the Symfony docs: https://symfony.com/download .
