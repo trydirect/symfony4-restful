@@ -46,7 +46,7 @@ rest_controller:
 ```
 Now you have finished configuration.
 
-#What next?
+# What next?
 
 You need to install and configure Doctrine ORM and create your Entity for working with Rest API. Follow instructions described in Symfony Docs:
 1. Doctrine installation: https://symfony.com/doc/current/doctrine.html
