@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69674f43-fbc5-4a95-89d2-ddea72333335" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony-rest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/.gitignore" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="docker/" />
@@ -26,14 +33,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="885">
-                <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <first_editor relative-caret-position="855">
+                <caret line="52" column="96" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/symfony/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -97,8 +113,8 @@
         <option value="$PROJECT_DIR$/symfony/src/Controller/Rest/RestController.php" />
         <option value="$PROJECT_DIR$/dockerfiles/php/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/test" />
-        <option value="$PROJECT_DIR$/symfony/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/symfony/.gitignore" />
       </list>
     </option>
   </component>
@@ -260,12 +276,12 @@
       <workItem from="1551947747599" duration="7098000" />
       <workItem from="1552396999751" duration="44300000" />
       <workItem from="1552560318123" duration="24000" />
-      <workItem from="1552631710705" duration="6872000" />
+      <workItem from="1552631710705" duration="7176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93917000" />
+    <option name="totallyTimeSpent" value="94221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,7 +296,7 @@
     <frame x="1431" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26091763" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26091763" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,7 +307,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32810867" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32868218" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32706374" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32706374" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32706374" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3291536" />
@@ -597,13 +613,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker/test" />
-    <entry file="file://$PROJECT_DIR$/symfony/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -624,10 +633,17 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="885">
-            <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <first_editor relative-caret-position="855">
+            <caret line="52" column="96" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
         </state>
       </provider>
     </entry>
