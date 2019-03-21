@@ -52,3 +52,13 @@ You need to install and configure Doctrine ORM and create your Entity for workin
 1. Doctrine installation: https://symfony.com/doc/current/doctrine.html
 2. Doctrine configuration: https://symfony.com/doc/current/reference/configuration/doctrine.html
 
+
+
+
+In elasticsearch container 
+
+bin/elasticsearch-plugin install x-pack
+
+On host machine 
+
+ sudo sysctl -w vm.max_map_count=262144 

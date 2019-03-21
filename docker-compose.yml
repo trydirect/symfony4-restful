@@ -26,6 +26,11 @@ services:
       - ./symfony:/var/www/html
       - ./www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./xdebug.ini:/usr/local/lib/php/doc/xdebug/xdebug.ini
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          tag: "container_{{.Name}}"
 
 
   phpmyadmin:
@@ -38,10 +43,14 @@ services:
         - 8080:80
       volumes:
         - /sessions
-
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          tag: "container_{{.Name}}"
 
   elasticsearch:
-    image: elasticsearch:5.4
+    image: elasticsearch:5.4.3
     restart: always
     container_name: elasticsearch
     environment:
@@ -58,9 +67,12 @@ services:
       - php
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data
+      - ./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - "9200:9300"
 
   kibana:
-      image: kibana:5.4
+      image: kibana:5.4.3
       restart: always
       container_name: kibana
       depends_on:
@@ -69,13 +81,18 @@ services:
         - "5601:5601"
       links:
         - elasticsearch
+      volumes:
+          - ./config/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
 
   logstash:
-      image: logstash:5.4
+      build: config/logstash/
+      environment:
+        LS_JAVA_OPTS: "-Xms1g -Xmx4g"
+      # image: logstash:5.6
       container_name: logstash
       restart: always
       ports:
-        - "5044"
+        - "5044:5044"
       links:
         - elasticsearch
       depends_on:
@@ -89,6 +106,12 @@ services:
         - symfony/.env
       volumes:
         - ./redis-data:/data
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          tag: "container_{{.Name}}"
+
 
   db:
     image: mysql:5.7
@@ -105,6 +128,12 @@ services:
     volumes:
 #      - ./docker/dbdata:/var/lib/mysql
       - db:/var/lib/mysql
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          tag: "container_{{.Name}}"
+
 
 # entry point
   nginx:
@@ -127,3 +156,8 @@ services:
       - ./cron/nginx:/var/spool/cron/crontabs
       - ./symfony:/var/www/html
     entrypoint: /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        tag: "container_{{.Name}}"
