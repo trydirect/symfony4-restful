@@ -9,3 +9,6 @@ COPY ./filebeat.conf /usr/share/logstash/pipeline
 COPY ./logstash.yml /usr/share/logstash/config
 RUN bin/logstash-plugin install x-pack
 RUN logstash-plugin install logstash-filter-json
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
