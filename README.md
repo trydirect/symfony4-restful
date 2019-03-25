@@ -1,64 +1,31 @@
 # symfony4-restful
 RESTfull API template based on Symfony 4 +  MySQL + docker-compose.yml for development purpose
+
+## Note
+Before installing this project, please, make sure you have installed docker and docker-compose
+
+To install docker execute: 
+```sh
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sh get-docker.sh
+$ pip install docker-compose
+```
 ## Installation
-
-Firstly, you must have ready-to-use Symfony project. Instructions in the Symfony docs: https://symfony.com/download .
-
-Then, you should install FOSRESTBundle - bundle for creating Restful API on Symfony:
-
-1 -
-    ```  
-    composer require symfony/serializer 
-    ```
-
-2 -
-    ```  
-    composer require friendsofsymfony/rest-bundle 
-    ```
-
-
-# Config
-
-You have to configure FOSRESTBundle by following steps:
-
-   ```
-   #config/packages/fost_rest.yaml
-   fos_rest:
-       view:
-          view_response_listener:  true
-       format_listener:
-           rules:
-              - { path: ^/api, prefer_extension: true, fallback_format: json, priorities: [ json ] }
-   ```
+Clone this project into your work directory:
+```sh
+$ git clone "https://github.com/trydirect/symfony4-restful.git"
 ```
-#config/routes/annotations.yaml
-#Note: use your own resource/directory as you prefer
-#Note: In this config you separating Rest and Web controllers
-
-web_controller:
-    resource: ../../src/Infrastructure/Controller/Web/
-     type: annotation
-     
-rest_controller:
-     resource: ../../src/Infrastructure/Controller/Rest/
-     type: annotation
-     prefix: /api
+Then build it via docker-compose:
+```sh
+$ cd symfony4-restful
+$ docker-compose up -d
 ```
-Now you have finished configuration.
-
-# What next?
-
-You need to install and configure Doctrine ORM and create your Entity for working with Rest API. Follow instructions described in Symfony Docs:
-1. Doctrine installation: https://symfony.com/doc/current/doctrine.html
-2. Doctrine configuration: https://symfony.com/doc/current/reference/configuration/doctrine.html
 
 
+# Contributing
 
-
-In elasticsearch container 
-
-bin/elasticsearch-plugin install x-pack
-
-On host machine 
-
- sudo sysctl -w vm.max_map_count=262144 
+1. Fork it (https://github.com/trydirect/symfony4-restful/fork)
+2. Create your feature branch (git checkout -b feature/fooBar)
+3. Commit your changes (git commit -am 'Add some fooBar')
+4. Push to the branch (git push origin feature/fooBar)
+5. Create a new Pull Request
