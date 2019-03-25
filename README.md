@@ -6,7 +6,7 @@ RESTfull API template based on Symfony 4 for development purpose
 * Elasticsearch 5.4.3
 * Kibana 5.4.3
 * Logstash 5.4.0
-* XDebug 1.6.1
+* XDebug 2.6.1
 
 ## Note
 Before installing this project, please, make sure you have installed docker and docker-compose
