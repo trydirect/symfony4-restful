@@ -7,6 +7,10 @@ RESTfull API template based on Symfony 4 for development purpose
 * Kibana 5.4.3
 * Logstash 5.4.0
 * XDebug 2.6.1
+* Nginx
+* Supervisord
+* mysql 5.7
+* Ubuntu 18.04
 
 ## Note
 Before installing this project, please, make sure you have installed docker and docker-compose
