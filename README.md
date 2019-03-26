@@ -1,15 +1,15 @@
 # symfony4-restful
 RESTfull API template based on Symfony 4 for development purpose
-* php-fpm 7.2.11
+* PHP-fpm 7.2.11
 * Rest API
+* MySQL 5.7
 * Redis latest
 * Elasticsearch 5.4.3
 * Kibana 5.4.3
 * Logstash 5.4.0
 * XDebug 2.6.1
-* Nginx
+* Nginx 
 * Supervisord
-* mysql 5.7
 * Ubuntu 18.04
 
 ## Note
