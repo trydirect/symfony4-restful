@@ -83,9 +83,6 @@ assert mq.status == 'running'
 logs = mq.logs()
 assert 'Server startup complete; 3 plugins started' in logs.decode()
 
-for c in client.containers.list():
-    assert c.status == 'running'
-
 #response = requests.get("http://127.0.0.1:9000")
 #assert response.status_code == 200
 
