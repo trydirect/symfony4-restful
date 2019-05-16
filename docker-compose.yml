@@ -2,52 +2,32 @@ version: "2"
 
 volumes:
     db:
-      driver: local
+    elasticdata:
+    redis-data:
 
 services:
 
   php:
-    image: trydirect/symfony:latest
+    image: trydirect/symfony4-restful:latest
+    build: dockerfiles/build
     restart: always
     container_name: php
-    env_file:
-         - symfony/.env
     user: 1001:1001
     links:
       - db
     working_dir: /var/www/html
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: rest_api
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
-      XDEBUG_CONFIG: remote_host=0.0.0.0
+    env_file:
+      - .env
     volumes:
       - ./symfony:/var/www/html
-      - ./www.conf:/usr/local/etc/php-fpm.d/www.conf
-      - ./xdebug.ini:/usr/local/lib/php/doc/xdebug/xdebug.ini
+      - ./configs/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./configs/php/xdebug.ini:/usr/local/lib/php/doc/xdebug/xdebug.ini
     logging:
-        driver: "json-file"
-        options:
-          max-size: "10m"
-          tag: "container_{{.Name}}"
+         driver: "json-file"
+         options:
+           max-size: "10m"
+           tag: "container_php"
 
-
-  phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      container_name: phpmyadmin
-      restart: always
-      depends_on:
-        - db
-      ports:
-        - 8080:80
-      volumes:
-        - /sessions
-      logging:
-        driver: "json-file"
-        options:
-          max-size: "10m"
-          tag: "container_{{.Name}}"
 
   elasticsearch:
     image: elasticsearch:5.4.3
@@ -66,10 +46,11 @@ services:
     depends_on:
       - php
     volumes:
-      - ./elasticsearch-data/data:/usr/share/elasticsearch/data
-      - ./config/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - elasticdata:/usr/share/elasticsearch/data
+      - ./configs/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
-      - "9200:9300"
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
 
   kibana:
       image: kibana:5.4.3
@@ -81,14 +62,16 @@ services:
         - "5601:5601"
       links:
         - elasticsearch
+      env_file:
+        - .env
       volumes:
-          - ./config/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+        - ./configs/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
 
   logstash:
-      build: config/logstash/
+      image: optimum/logstash-symfony-5.4.0
+      build: configs/logstash/
       environment:
         LS_JAVA_OPTS: "-Xms1g -Xmx4g"
-      # image: logstash:5.6
       container_name: logstash
       restart: always
       ports:
@@ -98,14 +81,28 @@ services:
       depends_on:
         - elasticsearch
 
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:6.7.1
+    restart: always
+    container_name: filebeat
+    user: 0:0
+    env_file:
+      - .env
+    volumes:
+      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - logstash
+
   redis:
       image: redis:latest
       restart: always
       container_name: redis
       env_file:
-        - symfony/.env
+        - .env
       volumes:
-        - ./redis-data:/data
+        - redis-data:/data
       logging:
         driver: "json-file"
         options:
@@ -116,17 +113,12 @@ services:
   db:
     image: mysql:5.7
     restart: always
-    container_name: mysql57-container
+    container_name: db
     ports:
-      - "127.0.0.1:3357:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: rest_api
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
-      DB_CONNECTION: mysql
+      - "127.0.0.1:3306:3306"
+    env_file:
+      - .env
     volumes:
-#      - ./docker/dbdata:/var/lib/mysql
       - db:/var/lib/mysql
     logging:
         driver: "json-file"
@@ -147,13 +139,14 @@ services:
       - "443:443"
     links:
       - php
+      - kibana
     volumes:
-      - ./certs/ssl:/etc/nginx/ssl
-      - ./certs/letsencrypt:/etc/letsencrypt
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./supervisord:/etc/supervisor/conf.d/
-      - ./cron/nginx:/var/spool/cron/crontabs
+      - ./configs/certs/ssl:/etc/nginx/ssl
+      - ./configs/certs/letsencrypt:/etc/letsencrypt
+      - ./configs/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./configs/nginx/conf.d:/etc/nginx/conf.d
+      - ./configs/supervisord:/etc/supervisor/conf.d/
+      - ./configs/cron/nginx:/var/spool/cron/crontabs
       - ./symfony:/var/www/html
     entrypoint: /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
     logging:
