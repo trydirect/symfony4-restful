@@ -61,6 +61,9 @@ assert 'configuration file /usr/local/etc/php-fpm.conf test is successful' in ph
 php_proc = php.exec_run("sh -c 'ps aux |grep php-fpm'")
 assert 'php-fpm: master process (/usr/local/etc/php-fpm.conf)' in php_proc.output.decode()
 assert 'fpm is running, pid' in php.logs()
+php_proc = php.exec_run("sh -c 'php -i |xdebug'")
+print(php_proc.output.decode())
+# assert 'xdebug=On' in php_proc.output.decode()
 
 redis = client.containers.get('redis')
 assert redis.status == 'running'
