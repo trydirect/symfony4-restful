@@ -18,7 +18,6 @@ RUN apk update && apk upgrade\
     libaio-dev \
     zlib-dev \
     git \
-    subversion \
     freetype-dev \
     libjpeg-turbo-dev \
     libmcrypt-dev \
@@ -55,4 +54,7 @@ RUN cd xdebug-2.6.1 \
     && echo 'xdebug.max_nesting_level=512' >> /usr/local/etc/php.ini \
     && echo 'extension=xdebug.so' >> /usr/local/etc/php.ini
 RUN cd /usr/src && curl -OL https://github.com/symfony/symfony/archive/v4.2.3.tar.gz
+
+# Clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR '/var/www/html'
