@@ -55,7 +55,5 @@ RUN cd xdebug-2.6.1 \
     && echo 'extension=xdebug.so' >> /usr/local/etc/php.ini
 RUN cd /usr/src && curl -OL https://github.com/symfony/symfony/archive/v4.2.3.tar.gz
 
-# Clean up
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR '/var/www/html'
 RUN "ls"
