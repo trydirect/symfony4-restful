@@ -99,7 +99,6 @@ services:
       volumes:
         - redis-data:/data
 
-
   db:
     image: mysql:5.7
     restart: always
