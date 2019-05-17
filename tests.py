@@ -81,10 +81,11 @@ mysql_log = mysql.logs()
 assert "mysqld: ready for connections" in mysql_log.decode()
 print(mysql_log.decode())
 
-mq = client.containers.get('mq')
-assert mq.status == 'running'
-logs = mq.logs()
-assert 'Server startup complete; 3 plugins started' in logs.decode()
+# No RabbitMQ yet
+# mq = client.containers.get('mq')
+# assert mq.status == 'running'
+# logs = mq.logs()
+# assert 'Server startup complete; 3 plugins started' in logs.decode()
 
 #response = requests.get("http://127.0.0.1:9000")
 #assert response.status_code == 200
