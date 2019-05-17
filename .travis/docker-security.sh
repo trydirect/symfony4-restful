@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -eu
+DOCKER_CONTENT_TRUST=0
 
 echo "Run docker bench security"
 docker run \
