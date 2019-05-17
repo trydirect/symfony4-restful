@@ -114,8 +114,6 @@ services:
     image: mysql:5.7
     restart: always
     container_name: db
-    ports:
-      - "127.0.0.1:3306:3306"
     env_file:
       - .env
     volumes:

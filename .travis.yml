@@ -17,7 +17,7 @@ before_install:
 install:
   #- cd dockerfiles/build
   - docker-compose -f docker-compose-build.yml up -d --build
-  - docker-compose ps
+  - docker-compose -f docker-compose-build.yml ps
 
 
 before_script:
