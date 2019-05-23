@@ -1,49 +1,37 @@
 language: python
 python:
-  - 2.7
-
+- 2.7
 evv:
-  - DOCKER_CONTENT_TRUST=0
-
+- DOCKER_CONTENT_TRUST=0
 services:
-  - docker
-
+- docker
 before_install:
-  # update is required to update the repositories to see the new packages for
-  # Docker.
-  - sudo apt-get update
-  - docker-compose --version
-  - pip install docker-compose --upgrade
-  - docker-compose --version
-
-
+- sudo apt-get update
+- docker-compose --version
+- pip install docker-compose --upgrade
+- docker-compose --version
 install:
-  - docker-compose -f docker-compose-build.yml up -d --build
-  - docker-compose -f docker-compose-build.yml ps
-
-
+- docker-compose -f docker-compose-build.yml up -d --build
+- docker-compose -f docker-compose-build.yml ps
 before_script:
-  - pip install requests
-  - pip install docker
- #- cd $TRAVIS_BUILD_DIR
-
-
+- pip install requests
+- pip install docker
 script:
-  - bash ./.travis/linters.sh
-  - python tests.py
-
-
+- bash ./.travis/linters.sh
+- python tests.py
 notifications:
   slack:
     rooms:
-      - optimum-team:GycletOWK4Kt95GktwYwfUMp#build
-
-
+    - optimum-team:GycletOWK4Kt95GktwYwfUMp#build
 after_success:
-  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-  - export REPO=trydirect/symfony4-restful
-  - export TAG=app
-  - docker build -f Dockerfile -t $REPO:$COMMIT .
-  - docker tag $REPO:$COMMIT $REPO:$TAG
-  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-  - docker push $REPO
+- docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+- export REPO=trydirect/symfony4-restful
+- export TAG=app
+- docker build -f Dockerfile -t $REPO:$COMMIT .
+- docker tag $REPO:$COMMIT $REPO:$TAG
+- docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+- docker push $REPO
+env:
+  global:
+  - secure: bIQYO8XlgciYcZg/yTn5/5JUlGXfr4unvh84ktTecaeMWoTu1CobUf2gJtk/w3YszikmmY7+h+FP25t0ynHHGVQ4r5g4rOIOe+Ixujiselra7m5U87a0MXMMgAlGE1CTBIK4rcCV5jgFIGIxTifq0NRzaKcByzZ+zTsvmegrEcsKvE/3uQP33VJtv60jZjf5/upQZvsq3ZdNaQFQ7ZUyXnB3fyxd39GsB7gaQoLv2uYvNgIWo5YsXoj7fC3jsv4+ISg3CGXDffg5/63ZIeGnHDQDZhqx7i0YCIObhhJUG/e0skQHuY7QrvkAHQFptPLb1WJeoxTFgtQVOIf1yjaaFadogGn4eUX7C82oZY2Q8srruqIE62rroJkuGMIX/iGUP4qCLvFaNSiHFM8eMFt9A4eqEMfGDxYXChtWbMp65CcKuhthVRhUfs1oLXpGRWS57mGFaW/f/Q3VF5+3bGH2eU9wcYBh4aJnZwWLNHbfNdwyWzuB1eQxcmdSwAu2w5lvlGjL79fspPC36PSnsMDwfkmFCiyiUuXL4flNhAKkjrbOd0hgO1Sh46bt87h9Zv7qwl/mu8wIgLNWWWmnsnmcVy5OZ3NGubBw8YteQuyuyt7y7kDgYmt7ZbpDXKIw1mgHSzAxdvv5/SvVk3xV7dHjHViOaZJjVFtU8qCghgzX8Jw=
+  - secure: kj73Lc2XCzGjf7IIJLuoX6lpgcoNBfqwhHG1WcCYhjRTQEOuxpo+hHfTGa2N4nU4xMTXc/KGpvS/ihCwp7a3+zy4p6DN8GQr+drMqKZIqg3ax/25t5ocWyJ/bE7kD7N8Ibfo/67HGfJqISdzajFZOrF/4Y7RglXuTN1k2rF+m+jYc0XiT9H1hX0Mse6aaCJ7DPnd/+FBwe5XrVTUDmqUyFSVH7eXjK4Fy2hsvHd5EL5nDb8C6InqihnH71sgFHHYso5g9EmEfHwSnE5uLymEGE2kN8TqwgkoGXUT/b/E7QFduQpROcwn0Fc3kv3SpGondSDGTHRyBpt+ZQ1L7EtvembycEHS6pfCXt0jwp0d84bESthSKbVOIZGp7eCEHwk4oUlEiqZJSh5yRBY/q6keHv26vG6EW1i20259URsBbFi5xYHY3kCARvutYoqTa4f4Pres1EVYwXNw0jFGOEONaJ8Ax/IxQkrsJiukvM7wiSpsPvIe69eCjjj5WDPABvqigdlrtZrCPw496plWZQXx5K+HXfSY9vB8WzIsakX1WM5sQ/FU3ILpAb/3OEOAK/DX2mDoTxtflIWd7cgA/mCJdJc0glN6rRff/7IFI0JseNTYCemfPxUgb2NN5kxtX5axnpldeAKBy+51ubslmt890Ga/YaBbQFAZMEmjPWYiGW4=
