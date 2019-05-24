@@ -9,7 +9,6 @@ services:
 
   php:
     image: trydirect/symfony4-restful:latest
-    build: dockerfiles/build
     restart: always
     container_name: php
     user: 1001:1001
@@ -69,7 +68,6 @@ services:
 
   logstash:
       image: optimum/logstash-symfony-5.4.0
-      build: configs/logstash/
       environment:
         LS_JAVA_OPTS: "-Xms1g -Xmx4g"
       container_name: logstash
