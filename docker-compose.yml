@@ -11,7 +11,6 @@ services:
     image: trydirect/symfony4-restful:latest
     restart: always
     container_name: php
-    user: 1001:1001
     links:
       - db
     working_dir: /var/www/html

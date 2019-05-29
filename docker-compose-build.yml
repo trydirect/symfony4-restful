@@ -12,7 +12,6 @@ services:
     build: dockerfiles/build
     restart: always
     container_name: php
-    user: 1001:1001
     links:
       - db
     working_dir: /var/www/html
