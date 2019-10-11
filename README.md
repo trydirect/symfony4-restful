@@ -66,6 +66,12 @@ Date: Fri, 24 May 2019 16:45:55 GMT
 ```
 
 
+## Quick deployment to cloud
+##### Amazon AWS, Digital Ocean, Hetzner and others
+[<img src="https://img.shields.io/badge/quick%20deploy-%40try.direct-brightgreen.svg">](https://try.direct/server/user/deploy/InN5bWZvbnk0LXJlc3RmdWx8NnwxOCI.EAoFeA.umf6rDAsIUL624SeCMLSJFAdLgY/)
+
+
+
 # Contributing
 
 1. Fork it (https://github.com/trydirect/symfony4-restful/fork)
