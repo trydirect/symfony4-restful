@@ -10,17 +10,17 @@
 RESTfull API development template based on Symfony 4 for development purpose
 
 ## Stack includes
-* PHP-fpm 7.2.11
+* PHP-fpm 7.4
 * Rest API
 * MySQL 5.7
 * Redis latest
 * Elasticsearch 5.4.3
 * Kibana 5.4.3
 * Logstash 5.4.0
-* XDebug 2.6.1
+* XDebug 2.9.5
 * Nginx 
 * Supervisord
-* Ubuntu 18.04
+* Alpine latest
 
 ## Note
 Before installing this project, please, make sure you have installed docker and docker-compose
