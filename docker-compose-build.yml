@@ -8,7 +8,7 @@ volumes:
 services:
 
   php:
-    image: trydirect/symfony4-restful:latest
+    image: trydirect/symfony4-restful:4.4.8
     build: dockerfiles/build
     restart: always
     container_name: php

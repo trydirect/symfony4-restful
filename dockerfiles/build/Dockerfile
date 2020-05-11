@@ -1,9 +1,23 @@
-FROM php:7.2-fpm-alpine3.6
+ARG COMPOSER_VERSION=latest
+ARG PHP_VERSION=7.4-fpm-alpine
+
+FROM composer:$COMPOSER_VERSION AS composer
+FROM php:$PHP_VERSION AS base
+
+ENV SYMFONY_VERSION=4.4.8
+
+LABEL maintainer="info@optimum-web.com"
 
 WORKDIR '/app'
 
-RUN apk update && apk upgrade\
-    && apk add --no-cache curl libbz2 php7-bz2 php7-pdo php7-pgsql php7-bcmath php7-zmq php7-curl bash php7-pear php7-imagick openssh\
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+#
+# dev stage
+#
+FROM base AS dev
+RUN apk update && apk add --no-cache curl libbz2 php7-bz2 php7-pdo php7-pgsql php7-bcmath php7-zmq php7-curl bash \
+    php7-pear php7-imagick \
+    libzip-dev \
     libtool \
     postgresql-dev \
     libpng-dev \
@@ -30,21 +44,22 @@ RUN apk update && apk upgrade\
     hiredis-dev \
     make \
     unzip \
-    ffmpeg
+    && docker-php-ext-install -j$(nproc) gd bcmath zip bz2 pdo \
+    pdo_pgsql simplexml opcache sockets pcntl xsl pspell \
+    && docker-php-ext-configure gd \
+    && docker-php-ext-install pdo_mysql \
+    && pecl install imagick xdebug \
+    && docker-php-ext-enable imagick
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN docker-php-ext-install gd bcmath zip bz2 pdo pdo_pgsql simplexml opcache sockets mbstring pcntl xsl pspell
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-RUN docker-php-ext-install pdo_mysql
-RUN pecl install imagick
-RUN docker-php-ext-enable imagick
-RUN pecl install xdebug
-RUN curl -OL http://xdebug.org/files/xdebug-2.6.1.tgz && tar -xvzf xdebug-2.6.1.tgz
-RUN cd xdebug-2.6.1 \
-    && phpize \
+ENV XDEBUG_VERSION=2.9.5
+RUN curl -OL http://xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz
+RUN tar -xvzf xdebug-${XDEBUG_VERSION}.tgz
+WORKDIR xdebug-${XDEBUG_VERSION}
+RUN phpize \
     && ./configure --enable-xdebug \
     && make \
     && make install \
+    && make test \
     && cp modules/xdebug.so /usr/local/lib/php/extensions/no-debug-non-zts-20170718 \
     && echo 'zend_extension = /usr/local/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so' >> /usr/local/etc/php.ini \
     && echo 'xdebug.remote_enable=on' >> /usr/local/etc/php.ini \
@@ -54,7 +69,8 @@ RUN cd xdebug-2.6.1 \
     && echo 'xdebug.remote_handler=dbgp' >> /usr/local/etc/php.ini \
     && echo 'xdebug.max_nesting_level=512' >> /usr/local/etc/php.ini \
     && echo 'extension=xdebug.so' >> /usr/local/etc/php.ini
+
 WORKDIR /usr/src
-RUN curl -OL https://github.com/symfony/symfony/archive/v4.2.3.tar.gz
+RUN curl -OL https://github.com/symfony/symfony/archive/v$SYMFONY_VERSION.tar.gz
 RUN adduser -u 2000 -g 2000 -h /home/symfony -s /bin/bash -D symfony
 WORKDIR /var/www/html
