@@ -3,14 +3,13 @@
 namespace App\Controller\Rest;
 
 use App\Entity\Test;
-use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\View\View;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RestController extends FOSRestController
+class RestController extends AbstractFOSRestController
 {
     /**
      * @Rest\Post("/articles")
