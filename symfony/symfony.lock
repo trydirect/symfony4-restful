@@ -129,6 +129,9 @@
     "symfony/cache": {
         "version": "v4.2.3"
     },
+    "symfony/cache-contracts": {
+        "version": "v1.1.7"
+    },
     "symfony/config": {
         "version": "v4.2.3"
     },
@@ -160,8 +163,14 @@
     "symfony/dotenv": {
         "version": "v4.2.3"
     },
+    "symfony/error-handler": {
+        "version": "v4.4.1"
+    },
     "symfony/event-dispatcher": {
         "version": "v4.2.3"
+    },
+    "symfony/event-dispatcher-contracts": {
+        "version": "v1.1.7"
     },
     "symfony/filesystem": {
         "version": "v4.2.3"
@@ -224,6 +233,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/mime": {
+        "version": "v4.4.7"
+    },
     "symfony/options-resolver": {
         "version": "v4.2.4"
     },
@@ -233,8 +245,17 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
     },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.15.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
+    },
+    "symfony/polyfill-php72": {
+        "version": "v1.15.0"
+    },
+    "symfony/polyfill-php73": {
+        "version": "v1.13.1"
     },
     "symfony/property-access": {
         "version": "v4.2.4"
@@ -260,11 +281,27 @@
     "symfony/serializer": {
         "version": "v4.2.4"
     },
+    "symfony/service-contracts": {
+        "version": "v1.1.8"
+    },
     "symfony/stopwatch": {
         "version": "v4.2.4"
     },
     "symfony/templating": {
         "version": "v4.2.4"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "2ad9d2545bce8ca1a863e50e92141f0b9d87ffcd"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
     },
     "symfony/twig-bridge": {
         "version": "v4.2.4"
@@ -294,6 +331,9 @@
         "files": [
             "config/packages/validator.yaml"
         ]
+    },
+    "symfony/var-dumper": {
+        "version": "v4.4.1"
     },
     "symfony/var-exporter": {
         "version": "v4.2.3"
