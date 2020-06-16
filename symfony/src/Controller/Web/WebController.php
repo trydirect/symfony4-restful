@@ -1,10 +1,10 @@
 <?php
 namespace App\Controller\Web;
 use App\Entity\Test;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class WebController extends Controller
+class WebController extends AbstractController
 {
     /**
      * @Rest\Get("/")

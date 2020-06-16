@@ -4,7 +4,7 @@ ARG PHP_VERSION=7.4-fpm-alpine
 FROM composer:$COMPOSER_VERSION AS composer
 FROM php:$PHP_VERSION AS base
 
-ENV SYMFONY_VERSION=4.4.8
+ENV SYMFONY_VERSION=5.0.1
 
 LABEL maintainer="info@optimum-web.com"
 
